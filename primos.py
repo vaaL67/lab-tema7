@@ -1,7 +1,9 @@
-def es_primo(n):
-    if n < 2:
+import math
+
+
+def es_primo(numero):
+    """Devuelve True si 'numero' es primo."""
+    if numero < 2:
         return False
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    return True
+    limite = math.isqrt(numero)
+    return all(numero % divisor != 0 for divisor in range(2, limite + 1))
